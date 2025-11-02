@@ -4,15 +4,19 @@
 // I. Data for the website content
 // ----------------------------------------------------------------------
 const portfolioData = {
-    roles: ["Problem Solver", "Fresher SDE", "Web Developer", "Creative Coder", "Front-End Designer", "UX Enthusiast"],
+  roles: ["Problem Solver", "Fresher SDE", "Web Developer", "Creative Coder", "Front-End Designer", "UX Enthusiast"],
     skills: [
         { name: "Data Structures & Algorithms", icon: "fas fa-brain" },
+        { name: "C++", icon: "fas fa-cogs" }, // ADDED: Based on 'File Backup Tool'
+        { name: "Python", icon: "fab fa-python" }, // ADDED: Based on 'Whistleblow' and 'Green Earth'
         { name: "HTML5", icon: "fab fa-html5" },
         { name: "CSS3", icon: "fab fa-css3-alt" },
         { name: "JavaScript", icon: "fab fa-js-square" },
         { name: "React", icon: "fab fa-react" },
-        { name: "Vue.js", icon: "fab fa-vuejs" },
+        { name: "Flask", icon: "fas fa-flask" }, // REPLACED Vue.js
+        { name: "MySQL", icon: "fas fa-database" }, // ADDED: Based on project tech stacks
         { name: "Tailwind CSS", icon: "fas fa-wind" },
+        { name: "REST APIs", icon: "fas fa-network-wired" }, // ADDED: Essential for your web apps
         { name: "Node.js", icon: "fab fa-node-js" },
         { name: "Git", icon: "fab fa-git-alt" },
     ],
@@ -22,12 +26,6 @@ const portfolioData = {
             description: "Implemented file backup, restore functionality, and action logging using OOP, file handling, and directory management in C++.",
             tech: "C++, OOP, fstream, dirent.h",
             icon: "fas fa-folder"
-        },
-        {
-            title: "💬 Real-Time Chat App",
-            description: "A secure, real-time messaging platform with user authentication, private rooms, and a clean, modern UI.",
-            tech: "JavaScript, Node.js, WebSockets",
-            icon: "fas fa-comments"
         },
         {
             title: "💻 Personal Portfolio Website",
