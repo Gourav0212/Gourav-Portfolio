@@ -38,7 +38,7 @@ const portfolioData = {
     description: "Developed a privacy-conscious web application for secure and anonymous reporting. Focused on identity protection and secure data handling, implementing best practices in backend architecture and encryption. Features an admin dashboard for managing submissions and ensuring integrity.",
     tech: "Python, Flask, MySQL, HTML, CSS, JavaScript",
     icon: "fas fa-shield-alt"
-}
+},
 
         {
             title: "🌱 Green Earth Website",
