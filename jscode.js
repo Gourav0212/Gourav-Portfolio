@@ -30,15 +30,16 @@ const portfolioData = {
         {
             title: "💻 Personal Portfolio Website",
             description: "Created a personal website to showcase projects and posts, focusing on frontend design and user interaction.",
-            tech: "HTML, CSS, JavaScript, React",
+            tech: "HTML, CSS, JavaScript",
             icon: "fas fa-user"
         },
         {
-            title: "🕵️ Whistleblow – (Security-Focused Web App)",
-            description: "A secure system enabling anonymous and metadata-free reporting of corruption cases. Designed a privacy-first architecture using Flask and MySQL, ensuring complete identity protection with custom metadata elimination mechanisms. Includes multi-layered logging for transparency without compromising anonymity.",
-            tech: "Python, Flask, MySQL, HTML, CSS, JavaScript",
-            icon: "fas fa-shield-alt"
-        },
+    title: "🕵️ Secure Anonymous Reporting System",
+    description: "Developed a privacy-conscious web application for secure and anonymous reporting. Focused on identity protection and secure data handling, implementing best practices in backend architecture and encryption. Features an admin dashboard for managing submissions and ensuring integrity.",
+    tech: "Python, Flask, MySQL, HTML, CSS, JavaScript",
+    icon: "fas fa-shield-alt"
+}
+
         {
             title: "🌱 Green Earth Website",
             description: "Designed a website to submit eco-friendly ideas with form submissions stored using MySQL, focusing on frontend and user interaction.",
