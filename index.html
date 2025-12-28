@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gourav Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="favicon/fav.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gourav Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="favicon/fav.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="antialiased">
@@ -41,7 +40,7 @@
     <div class="container mx-auto max-w-4xl text-center">
       <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gradient-red">About Me</h2>
       <p class="text-gray-200 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-        I am a passionate and creative individual with a love for building digital experiences. My journey into web development began with a curiosity for how things work online, and it has since evolved into a full-fledged passion for creating clean, functional, and beautiful applications. I specialize in front-end development, focusing on responsive design and user-centric interfaces.
+I am a <strong class="text-white">results-driven Problem Solver</strong> and <strong class="text-white">Software Developer</strong> specialized in architecting efficient, scalable digital solutions. With a deep foundation in <strong class="text-white">Data Structures, Algorithms (DSA)</strong>, and <strong class="text-white">OOP</strong>, I excel at bridging the gap between complex backend logic and intuitive user experiences. I thrive on <strong class="text-white">critical thinking</strong>—deconstructing intricate problems into <strong class="text-white">optimized, high-performance code</strong>. Whether I am fine-tuning database schemas or engineering seamless interfaces, I approach every project with a commitment to <strong class="text-white">technical excellence</strong> and creative innovation.
       </p>
     </div>
   </section>
@@ -101,53 +100,49 @@
 
   <!-- Script directly inside DSA section -->
   <script>
-  async function updateDSAStats() {
-    const dsaText = document.getElementById("dsa-progress");
+async function updateDSAStats() {
+  const dsaText = document.getElementById("dsa-progress");
 
-    try {
-      // ✅ LeetCode
-      const leetRes = await fetch("https://leetcode-stats-api.herokuapp.com/GouravKing");
-      const leetData = await leetRes.json();
+  // ✅ Set your specific default values
+  let leetSolved = 151;
+  let gfgSolved = 336;
 
-      // ✅ GFG
-      let gfgSolved = 0;
-      try {
-        const gfgRes = await fetch("https://gfgapi.vercel.app/api/username/avantibwgh");
-        const gfgData = await gfgRes.json();
-        gfgSolved = gfgData.total_problems_solved || 0;
-      } catch {
-        gfgSolved = 310; // fallback
-      }
+  try {
+    // Try fetching LeetCode
+    const leetRes = await fetch("https://leetcode-stats-api.herokuapp.com/GouravKing");
+    const leetData = await leetRes.json();
+    if (leetData && leetData.totalSolved) leetSolved = leetData.totalSolved;
 
-      // ✅ Total
-      const totalSolved = leetData.totalSolved + gfgSolved;
-
-      // ✅ Time formatting
-      const now = new Date();
-      const date = now.getDate().toString().padStart(2, "0");
-      const month = (now.getMonth() + 1).toString().padStart(2, "0");
-      const year = now.getFullYear();
-      const hours = now.getHours().toString().padStart(2, "0");
-      const minutes = now.getMinutes().toString().padStart(2, "0");
-      const formattedTime = `<strong><em>${date}/${month}/${year} ${hours}:${minutes}</em></strong>`;
-
-      // ✅ Update text
-      dsaText.innerHTML =
-        `I have solved around <strong>${totalSolved}+</strong> Data Structures and Algorithms problems `
-        + `(LeetCode: ${leetData.totalSolved}, GFG: ${gfgSolved}) `
-        + `as of ${formattedTime}.`;
-
-      // ✅ Fade-in effect
-      dsaText.classList.remove("opacity-0");
-    } 
-    catch (error) {
-      dsaText.innerText = "Unable to fetch DSA stats right now.";
-      dsaText.classList.remove("opacity-0");
-    }
+    // Try fetching GFG
+    const gfgRes = await fetch("https://gfgapi.vercel.app/api/username/avantibwgh");
+    const gfgData = await gfgRes.json();
+    if (gfgData && gfgData.total_problems_solved) gfgSolved = gfgData.total_problems_solved;
+  } catch (error) {
+    console.warn("Using fallback values (151/336) due to API error.");
   }
 
-  updateDSAStats();
-  </script>
+  const totalSolved = leetSolved + gfgSolved;
+
+  // Format time properly
+  const now = new Date();
+  const date = now.getDate().toString().padStart(2, "0");
+  const month = (now.getMonth() + 1).toString().padStart(2, "0");
+  const year = now.getFullYear();
+  const hours = now.getHours().toString().padStart(2, "0");
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const formattedTime = `<strong><em>${date}/${month}/${year} ${hours}:${minutes}</em></strong>`;
+
+  // Update HTML with backticks (``) to avoid syntax errors
+  dsaText.innerHTML = 
+    `I have solved around <strong>${totalSolved}+</strong> Data Structures and Algorithms problems ` +
+    `(LeetCode: ${leetSolved}, GFG: ${gfgSolved}) as of ${formattedTime}.`;
+
+  // Remove opacity-0 to trigger the CSS transition
+  dsaText.classList.remove("opacity-0");
+}
+
+updateDSAStats();
+</script>
 </section>
 
   <!-- Contact Section -->
