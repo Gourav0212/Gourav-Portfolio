@@ -25,26 +25,30 @@ const portfolioData = {
             title: "📂 File Backup Tool",
             description: "Implemented file backup, restore functionality, and action logging using OOP, file handling, and directory management in C++.",
             tech: "C++, OOP, fstream, dirent.h",
-            icon: "fas fa-folder"
+            icon: "fas fa-folder",
+            link: "https://github.com/Gourav0212/cpp-backup-tool"
         },
         {
             title: "💻 Personal Portfolio Website",
             description: "Created a personal website to showcase projects and posts, focusing on frontend design and user interaction.",
             tech: "HTML, CSS, JavaScript",
-            icon: "fas fa-user"
+            icon: "fas fa-user",
+            link: "http://127.0.0.1:5500/index.html"
         },
         {
     title: "🕵️ Secure Anonymous Reporting System",
     description: "Developed a privacy-conscious web application for secure and anonymous reporting. Focused on identity protection and secure data handling, implementing best practices in backend architecture and encryption. Features an admin dashboard for managing submissions and ensuring integrity.",
     tech: "Python, Flask, MySQL, HTML, CSS, JavaScript",
-    icon: "fas fa-shield-alt"
+    icon: "fas fa-shield-alt",
+    link: "https://whistleblow.onrender.com/"
 },
 
         {
             title: "🌱 Green Earth Website",
             description: "Designed a website to submit eco-friendly ideas with form submissions stored using MySQL, focusing on frontend and user interaction.",
             tech: "HTML, CSS, JavaScript, Flask, REST API, MySQL",
-            icon: "fas fa-leaf"
+            icon: "fas fa-leaf",
+            link: "https://greenearthwebsite.onrender.com/"
         }
     ]
 };
@@ -121,6 +125,7 @@ const renderProjects = () => {
         card.innerHTML = `
             <i class="${project.icon} text-4xl mb-4 text-gradient-blue"></i>
             <h3 class="text-2xl font-semibold mb-2 text-gradient-blue">${project.title}</h3>
+            ${project.link ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white underline underline-offset-4 mb-3">LINK</a>` : ''}
             <p class="text-sm text-gray-300 mb-4">${project.description}</p>
             <p class="text-xs font-light italic text-gray-400">${project.tech}</p>
         `;
